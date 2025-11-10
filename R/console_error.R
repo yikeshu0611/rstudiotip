@@ -1,3 +1,9 @@
+#' 设置console中error的打印
+#'
+#'
+#' @returns console
+#' @export
+#'
 console_error <- function(text_color='red',
                           border_color='red',
                           bg_color='white'){

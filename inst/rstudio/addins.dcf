@@ -2,3 +2,13 @@ Name: insert in
 Description: inset in
 Binding: insertIN
 Interactive: false
+
+Name: 项目启动器
+Description: 显示并操作所有记录项目
+Binding: launch_project_selector
+Interactive: true
+
+Name: Edit Excel File
+Description: Open and edit Excel file using DT and save.
+Binding: edit_excel_addin
+Interactive: true
