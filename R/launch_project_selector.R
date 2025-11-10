@@ -202,7 +202,9 @@ launch_project_selector <- function() {
                                                 height = 800))
 }
 projectlist <- function(){
-    mru <- '/Users/zhangjing/.local/share/rstudio/monitored/lists/project_mru'
+    mru <- c('/Users/zhangjing/.local/share/rstudio/monitored/lists/project_mru',
+             '/Users/caixin/.local/share/rstudio/monitored/lists/project_mru')
+    mru <- mru[file.exists(mru)]
     if (file.exists(mru)){
         p1 <- readLines(mru)
     }else{
@@ -225,7 +227,9 @@ projectlist <- function(){
     projects[order(do::file.name(projects))]
 }
 deletproject <- function(path){
-    mru <- '/Users/zhangjing/.local/share/rstudio/monitored/lists/project_mru'
+    mru <- c('/Users/zhangjing/.local/share/rstudio/monitored/lists/project_mru',
+             '/Users/caixin/.local/share/rstudio/monitored/lists/project_mru')
+    mru <- mru[file.exists(mru)]
     if (file.exists(mru)){
         p1 <- set::not(readLines(mru),path)
         writeLines(p1,mru)
@@ -239,7 +243,9 @@ deletproject <- function(path){
 }
 
 filelist <- function(){
-    mru <- '/Users/zhangjing/.local/share/rstudio/monitored/lists/file_mru'
+    mru <- c('/Users/zhangjing/.local/share/rstudio/monitored/lists/file_mru',
+    '/Users/caixin/.local/share/rstudio/monitored/lists/file_mru')
+    mru <- mru[file.exists(mru)]
     if (file.exists(mru)){
         p1 <- readLines(mru)
     }else{
@@ -267,7 +273,9 @@ filelist <- function(){
     files
 }
 deletfile <- function(path){
-    mru <- '/Users/zhangjing/.local/share/rstudio/monitored/lists/file_mru'
+    mru <- c('/Users/caixin/.local/share/rstudio/monitored/lists/file_mru',
+    '/Users/zhangjing/.local/share/rstudio/monitored/lists/file_mru')
+    mru <- mru[file.exists(mru)]
     if (file.exists(mru)){
         p1 <- set::not(readLines(mru),path)
         writeLines(p1,mru)
